@@ -6,8 +6,8 @@ Teknolojiler
 
 | Katman | Teknoloji |
 |--------|-----------|
-| **UI** | WPF (.NET 10) + MVVM Pattern |
-| **BL** | C# Class Library - İş Kuralları |
+| **UI** | WPF + MVVM Pattern |
+| **BL** | C# Class Library|
 | **DAL** | Entity Framework Core + SQLite |
 
 Proje Yapısı
@@ -33,10 +33,10 @@ MiniERP/
 
 Özellikler
 
-Ürün Yönetimi - Ekleme, güncelleme, silme, arama
-Kategori Yönetimi - Kategori CRUD işlemleri
-Stok Giriş - Ürün stok girişi ve hareket kaydı
-Stok Çıkış - Stok çıkışı + yetersiz stok kontrolü
-Raporlama - Stok durumu, hareket raporu, düşük stok uyarıları
-Dashboard - Özet bilgiler, günlük hareketler
+Ürün Yönetimi** - Ekleme, güncelleme, silme, arama
+Kategori Yönetimi** - Kategori CRUD işlemleri
+Stok Giriş** - Ürün stok girişi ve hareket kaydı
+Stok Çıkış** - Stok çıkışı + yetersiz stok kontrolü
+Raporlama** - Stok durumu, hareket raporu, düşük stok uyarıları
+Dashboard** - Özet bilgiler, günlük hareketler
 
