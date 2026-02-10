@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MiniERP.BL/MiniERP.BL.csproj" />
+  <Project Path="MiniERP.DAL/MiniERP.DAL.csproj" />
+  <Project Path="MiniERP.UI/MiniERP.UI.csproj" />
+</Solution>
