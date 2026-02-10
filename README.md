@@ -1,8 +1,8 @@
-# Mini ERP - Stok Yönetim Sistemi
+Mini ERP - Stok Yönetim Sistemi
 
-Katmanlı mimari (UI → BL → DAL) ile geliştirilmiş masaüstü envanter/stok yönetim uygulaması.
+Katmanlı mimari ile geliştirilmiş masaüstü envanter/stok yönetim uygulaması.
 
-## 🛠️ Teknolojiler
+Teknolojiler
 
 | Katman | Teknoloji |
 |--------|-----------|
@@ -10,7 +10,7 @@ Katmanlı mimari (UI → BL → DAL) ile geliştirilmiş masaüstü envanter/sto
 | **BL** | C# Class Library - İş Kuralları |
 | **DAL** | Entity Framework Core + SQLite |
 
-## 📁 Proje Yapısı
+Proje Yapısı
 
 ```
 MiniERP/
@@ -31,48 +31,12 @@ MiniERP/
 └── MiniERP.slnx          # Solution dosyası
 ```
 
-## ✨ Özellikler
+Özellikler
 
-- **📦 Ürün Yönetimi** - Ekleme, güncelleme, silme, arama
-- **📁 Kategori Yönetimi** - Kategori CRUD işlemleri
-- **📥 Stok Giriş** - Ürün stok girişi ve hareket kaydı
-- **📤 Stok Çıkış** - Stok çıkışı + yetersiz stok kontrolü
-- **📊 Raporlama** - Stok durumu, hareket raporu, düşük stok uyarıları
-- **🏠 Dashboard** - Özet bilgiler, günlük hareketler
+Ürün Yönetimi - Ekleme, güncelleme, silme, arama
+Kategori Yönetimi - Kategori CRUD işlemleri
+Stok Giriş - Ürün stok girişi ve hareket kaydı
+Stok Çıkış - Stok çıkışı + yetersiz stok kontrolü
+Raporlama - Stok durumu, hareket raporu, düşük stok uyarıları
+Dashboard - Özet bilgiler, günlük hareketler
 
-## 🏗️ Mimari
-
-```
-┌──────────────────────────┐
-│     MiniERP.UI (WPF)     │  ← Kullanıcı arayüzü
-│     MVVM Pattern         │
-├──────────────────────────┤
-│     MiniERP.BL           │  ← İş kuralları & validasyon
-│     Services + DTOs      │
-├──────────────────────────┤
-│     MiniERP.DAL          │  ← Veri erişim katmanı
-│     EF Core + SQLite     │
-└──────────────────────────┘
-```
-
-## 🚀 Çalıştırma
-
-```bash
-# Projeyi build et
-dotnet build MiniERP.slnx
-
-# Uygulamayı çalıştır
-dotnet run --project MiniERP.UI
-```
-
-> **Not:** Uygulama ilk çalıştırıldığında SQLite veritabanı otomatik olarak oluşturulur ve örnek kategoriler eklenir.
-
-## 📋 Veritabanı Şeması
-
-- **Category** - Id, Name, Description
-- **Product** - Id, Name, Barcode, CategoryId, PurchasePrice, SalePrice, CurrentStock, MinStockLevel
-- **StockMovement** - Id, ProductId, MovementType (Entry/Exit), Quantity, UnitPrice, MovementDate
-
-## 📄 Lisans
-
-Bu proje eğitim amaçlı geliştirilmiştir.
