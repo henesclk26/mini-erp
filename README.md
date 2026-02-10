@@ -33,10 +33,10 @@ MiniERP/
 
 Özellikler
 
-Ürün Yönetimi** - Ekleme, güncelleme, silme, arama
-Kategori Yönetimi** - Kategori CRUD işlemleri
-Stok Giriş** - Ürün stok girişi ve hareket kaydı
-Stok Çıkış** - Stok çıkışı + yetersiz stok kontrolü
-Raporlama** - Stok durumu, hareket raporu, düşük stok uyarıları
-Dashboard** - Özet bilgiler, günlük hareketler
+Ürün Yönetimi - Ekleme, güncelleme, silme, arama
+Kategori Yönetimi - Kategori CRUD işlemleri
+Stok Giriş - Ürün stok girişi ve hareket kaydı
+Stok Çıkış - Stok çıkışı + yetersiz stok kontrolü
+Raporlama - Stok durumu, hareket raporu, düşük stok uyarıları
+Dashboard - Özet bilgiler, günlük hareketler
 
