@@ -1,4 +1,4 @@
-Mini ERP - Stok Yönetim Sistemi
+Mini ERP Uygulaması
 
 Katmanlı mimari ile geliştirilmiş masaüstü envanter/stok yönetim uygulaması.
 
