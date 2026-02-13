@@ -1,0 +1,93 @@
+<UserControl x:Class="MiniERP.UI.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="{StaticResource PrimaryBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="24">
+            <!-- Summary Cards -->
+            <UniformGrid Columns="4" Margin="0,0,0,24">
+                <!-- Total Products -->
+                <Border Background="#243B53" CornerRadius="10" Padding="20,16" Margin="0,0,12,0">
+                    <StackPanel>
+                        <TextBlock Text="📦 Toplam Ürün" Foreground="{StaticResource TextSecondaryBrush}" FontSize="12"/>
+                        <TextBlock Text="{Binding TotalProducts}" Foreground="White" FontSize="28" FontWeight="Bold" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!-- Categories -->
+                <Border Background="#243B53" CornerRadius="10" Padding="20,16" Margin="0,0,12,0">
+                    <StackPanel>
+                        <TextBlock Text="📁 Kategoriler" Foreground="{StaticResource TextSecondaryBrush}" FontSize="12"/>
+                        <TextBlock Text="{Binding TotalCategories}" Foreground="White" FontSize="28" FontWeight="Bold" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!-- Low Stock -->
+                <Border Background="#243B53" CornerRadius="10" Padding="20,16" Margin="0,0,12,0">
+                    <StackPanel>
+                        <TextBlock Text="⚠️ Düşük Stok" Foreground="{StaticResource WarningBrush}" FontSize="12"/>
+                        <TextBlock Text="{Binding LowStockCount}" Foreground="{StaticResource WarningBrush}" FontSize="28" FontWeight="Bold" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+                <!-- Stock Value -->
+                <Border Background="#243B53" CornerRadius="10" Padding="20,16">
+                    <StackPanel>
+                        <TextBlock Text="💰 Stok Değeri" Foreground="{StaticResource TextSecondaryBrush}" FontSize="12"/>
+                        <TextBlock Text="{Binding TotalStockValue, StringFormat='₺{0:N2}'}" Foreground="{StaticResource SuccessBrush}" FontSize="24" FontWeight="Bold" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <!-- Today Stats -->
+            <UniformGrid Columns="2" Margin="0,0,0,24">
+                <Border Background="#1C3D2A" CornerRadius="10" Padding="20,16" Margin="0,0,12,0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="📥" FontSize="24" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                        <StackPanel>
+                            <TextBlock Text="Bugünkü Giriş" Foreground="{StaticResource TextSecondaryBrush}" FontSize="12"/>
+                            <TextBlock Text="{Binding TodayEntryCount, StringFormat='{}{0} işlem'}" Foreground="{StaticResource SuccessBrush}" FontSize="18" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border Background="#3D1C1C" CornerRadius="10" Padding="20,16">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="📤" FontSize="24" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                        <StackPanel>
+                            <TextBlock Text="Bugünkü Çıkış" Foreground="{StaticResource TextSecondaryBrush}" FontSize="12"/>
+                            <TextBlock Text="{Binding TodayExitCount, StringFormat='{}{0} işlem'}" Foreground="{StaticResource DangerBrush}" FontSize="18" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <!-- Low Stock Products -->
+            <Border Background="#243B53" CornerRadius="10" Padding="20" Margin="0,0,0,24">
+                <StackPanel>
+                    <TextBlock Text="⚠️ Düşük Stoklu Ürünler" Foreground="{StaticResource WarningBrush}" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,12"/>
+                    <DataGrid ItemsSource="{Binding LowStockProducts}" MaxHeight="200">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Ürün" Binding="{Binding Name}" Width="*"/>
+                            <DataGridTextColumn Header="Kategori" Binding="{Binding CategoryName}" Width="120"/>
+                            <DataGridTextColumn Header="Mevcut" Binding="{Binding CurrentStock}" Width="80"/>
+                            <DataGridTextColumn Header="Minimum" Binding="{Binding MinStockLevel}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Border>
+
+            <!-- Recent Movements -->
+            <Border Background="#243B53" CornerRadius="10" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="📋 Son Hareketler (Bugün)" Foreground="{StaticResource AccentBrush}" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,12"/>
+                    <DataGrid ItemsSource="{Binding RecentMovements}" MaxHeight="200">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Ürün" Binding="{Binding ProductName}" Width="*"/>
+                            <DataGridTextColumn Header="Tür" Binding="{Binding MovementType}" Width="80"/>
+                            <DataGridTextColumn Header="Miktar" Binding="{Binding Quantity}" Width="80"/>
+                            <DataGridTextColumn Header="Birim Fiyat" Binding="{Binding UnitPrice, StringFormat='₺{0:N2}'}" Width="100"/>
+                            <DataGridTextColumn Header="Saat" Binding="{Binding MovementDate, StringFormat='{}{0:HH:mm}'}" Width="80"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
